@@ -26,3 +26,11 @@ function updateHourStyles() {
 }
 
 updateHourStyles();
+
+$(".saveBtn").on("click", function () {
+  const timeblock = $(this).closest(".time-block");
+  const hour = timeblock.data("time");
+  const eventText = timeblock.find("textarea").val();
+
+  localStorage.setItem("event_" + hour, eventText);
+});
