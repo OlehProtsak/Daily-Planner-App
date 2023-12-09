@@ -47,3 +47,5 @@ function loadEvents() {
 }
 
 loadEvents();
+
+setInterval(updateHourStyles, 60000);
