@@ -34,3 +34,16 @@ $(".saveBtn").on("click", function () {
 
   localStorage.setItem("event_" + hour, eventText);
 });
+
+function loadEvents() {
+  $(".time-block").each(function () {
+    const hour = $(this).data("time");
+    const savedEvent = localStorage.getItem("event_" + hour);
+
+    if (savedEvent) {
+      $(this).find("textarea").val(savedEvent);
+    }
+  });
+}
+
+loadEvents();
